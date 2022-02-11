@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfigurator haftu</title>
+    <link rel=stylesheet href=style.css>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Marck+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id=title>
+            <h1>Konfigurator haftu</h1>
+        </div>
+    </header>
+
+    <main>
+        <div id=container>
+            <div id=config>
+                    <p class=config_caption id=config1>Wybierz rozmiar haftu:</p>
+                    <select id=hoop_size onchange="getHooplSize();">
+                        <option value=small>Mały</option>
+                        <option value=big>Duży</option>
+                    </select>
+
+                    <p class=config_caption id=config2>Wybierz rozmiar ręcznika:</p>
+                    <select id=towel_size onchange="getTowelSize();">
+                        <option value=small>Mały</option>
+                        <option value=big>Duży</option>
+                    </select>
+
+                    <p class=config_caption id=config3>Wybierz kolor ręcznika:</p>
+                    <select id=towel_color onchange="getTowelColor();">
+                        <option value=black>czarny</option>
+                        <option value=red>czerwony</option>
+                        <option value=brown>brązowy</option>
+                    </select>
+
+                    <p class=config_caption id=config4>Wybierz kolor nici:</p>
+                    <select id=thread_color onchange="getThreadColor();">
+                        <option value=white>biały</option>
+                        <option value=red>czerwony</option>
+                        <option value=brown>brązowy</option>
+                    </select>
+
+                    <p class=config_caption id=config5>Wybierz czcionkę:</p>
+                    <select id=embirodery_font onchange="getEmbrioderyFont();">
+                        <option value=gothic>gothic</option>
+                        <option value=script>script</option>
+                        <option value=cheltencham>cheltencham</option>
+                    </select>
+
+                    <p class=config_caption id=config6>Wybierz rozmiar czcionki:</p>
+                    <select id=font_size onchange="getFontSize();">
+                        <option value=1>mała</option>
+                        <option value=2>średnia</option>
+                        <option value=3>duża</option>
+                    </select>
+
+                    <p class=config_caption id=config7>Wpisz treść haftu:</p>
+                    <input type="text" placeholder="Co chcesz wyhaftować" id="embriodery">
+                    <button type="button" id="get_embriodery_text" onclick="getEmbriodery();">Wyślij</button>
+
+                    <p class=config_caption id=config9>Pozycja tamborka: </p>
+                    <select id=hoop_position onchange="getHoopPosition();">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                    </select>
+
+                    <p class=config_caption id=config10>Pozycja tekstu: </p>
+                    <select id=text_position onchange="getTextPosition();">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
+
+                    <p class=config_caption id=config12>Liczba znaków:</p>
+                    <p id=numberOfLetters> 0 </p>
+
+                    <p class=config_caption id=config13>Cena:</p>
+                    <p id=prize> 0 zł.</p>
+
+            </div>
+
+            <div id=towel>
+                <div id=hoop>
+                    <p id=embriodery_text>Przykładowy tekst</p>
+                </div>
+            </div>
+
+            <script>
+                function getHooplSize()
+                    {
+                        var selectedValue = document.getElementById("hoop_size").value;
+
+                        if(selectedValue=="small"){
+                            document.getElementById("hoop").style.width = "126px";
+                            document.getElementById("hoop").style.height = "110px";
+                        }
+
+                        if(selectedValue=="big"){
+                            document.getElementById("hoop").style.width = "200px";
+                            document.getElementById("hoop").style.height = "140px";
+                        }
+                    }
+
+                function getTowelSize()
+                    {
+                        var selectedValue = document.getElementById("towel_size").value;
+
+                        if(selectedValue=="small"){
+                            document.getElementById("towel").style.width = "500px";
+                            document.getElementById("towel").style.height = "900px";
+                        }
+
+                        if(selectedValue=="big"){
+                            document.getElementById("towel").style.width = "700px";
+                            document.getElementById("towel").style.height = "1400px";
+                        }
+                    }
+
+                function getTowelColor()
+                    {
+                        var selectedValue = document.getElementById("towel_color").value;
+
+                        if(selectedValue=="black"){
+                            document.getElementById("towel").style.background = "black";
+                        }
+
+                        if(selectedValue=="red"){
+                            document.getElementById("towel").style.background = "red";
+                        }
+
+                        if(selectedValue=="brown"){
+                            document.getElementById("towel").style.background = "brown";
+                        }
+                    }
+
+                function getThreadColor()
+                    {
+                        var selectedValue = document.getElementById("thread_color").value;
+
+                        if(selectedValue=="white"){
+                            document.getElementById("towel").style.color = "white";
+                        }
+
+                        if(selectedValue=="red"){
+                            document.getElementById("towel").style.color = "red";
+                        }
+
+                        if(selectedValue=="brown"){
+                            document.getElementById("towel").style.color = "brown";
+                        }
+                    }
+
+                function getEmbrioderyFont()
+                    {
+                        var selectedValue = document.getElementById("embirodery_font").value;
+
+                        if(selectedValue=="gothic"){
+                            document.getElementById("hoop").style.fontFamily = "sans-serif";
+                        }
+
+                        if(selectedValue=="script"){
+                            document.getElementById("hoop").style.fontFamily = "Marck Script, cursive";
+                        }
+
+                        if(selectedValue=="cheltencham"){
+                            document.getElementById("hoop").style.fontFamily = "Lora, serif";
+                        }
+                    }
+
+                function getFontSize()
+                    {
+                        var selectedValue = document.getElementById("font_size").value;
+
+                        if(selectedValue=="1"){
+                            document.getElementById("hoop").style.fontSize = "13px";
+                            factor = 1;
+                        }
+
+                        if(selectedValue=="2"){
+                            document.getElementById("hoop").style.fontSize = "23px";
+                            factor = 1.5;
+                        }
+
+                        if(selectedValue=="3"){
+                            document.getElementById("hoop").style.fontSize = "33px";
+                            factor = 2;
+                        }
+
+                        var Embriodery = document.getElementById("embriodery").value;
+
+                        document.getElementById("embriodery_text").innerHTML = Embriodery;
+                        document.getElementById("numberOfLetters").innerHTML = Embriodery.length;
+                        document.getElementById("prize").innerHTML = (Embriodery.length*factor + "zł.");
+                    }
+
+                function getEmbriodery()
+                    {
+                        var selectedValue = document.getElementById("font_size").value;
+
+                        var factor
+
+                        if(selectedValue=="1"){
+                            factor = 1;
+                        }
+
+                        if(selectedValue=="2"){
+                            factor = 1.5;
+                        }
+
+                        if(selectedValue=="3"){
+                            factor = 2;
+                        }
+
+                        var Embriodery = document.getElementById("embriodery").value;
+
+                        document.getElementById("embriodery_text").innerHTML = Embriodery;
+                        document.getElementById("numberOfLetters").innerHTML = Embriodery.length;
+                        document.getElementById("prize").innerHTML = (Embriodery.length*factor + "zł.");
+                    }
+
+                function getHoopPosition()
+                    {
+                        var selectedValue = document.getElementById("hoop_position").value;
+
+                        if(selectedValue=="1"){
+                            document.getElementById("hoop").style.gridRow = "2";
+                        }
+
+                        if(selectedValue=="2"){
+                            document.getElementById("hoop").style.gridRow = "3";
+                        }
+
+                        if(selectedValue=="3"){
+                            document.getElementById("hoop").style.gridRow = "4";
+                        }
+
+                        if(selectedValue=="4"){
+                            document.getElementById("hoop").style.gridRow = "5";
+                        }
+
+                        if(selectedValue=="5"){
+                            document.getElementById("hoop").style.gridRow = "6";
+                        }
+
+                        if(selectedValue=="6"){
+                            document.getElementById("hoop").style.gridRow = "7";
+                        }
+
+                        if(selectedValue=="7"){
+                            document.getElementById("hoop").style.gridRow = "8";
+                        }
+
+                        if(selectedValue=="8"){
+                            document.getElementById("hoop").style.gridRow = "9";
+                        }
+
+                        if(selectedValue=="9"){
+                            document.getElementById("hoop").style.gridRow = "10";
+                        }
+
+                        if(selectedValue=="10"){
+                            document.getElementById("hoop").style.gridRow = "11";
+                        }
+
+                    }
+
+                function getTextPosition()
+                    {
+                        var selectedValue = document.getElementById("text_position").value;
+
+                        if(selectedValue=="1"){
+                            document.getElementById("embriodery_text").style.gridRow = "2";
+                        }
+
+                        if(selectedValue=="2"){
+                            document.getElementById("embriodery_text").style.gridRow = "3";
+                        }
+
+                        if(selectedValue=="3"){
+                            document.getElementById("embriodery_text").style.gridRow = "4";
+                        }
+
+                        if(selectedValue=="4"){
+                            document.getElementById("embriodery_text").style.gridRow = "5";
+                        }
+
+                        if(selectedValue=="5"){
+                            document.getElementById("embriodery_text").style.gridRow = "6";
+                        }
+
+                    }
+                    
+            </script>
+        </div>
+    </main>
+</body>
+</html>
