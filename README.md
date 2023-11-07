@@ -1,4 +1,4 @@
-[![KnurBorzy's stats](https://github-readme-stats.vercel.app/api?username=KnurBorzy)](https://github.com/KnurBorzy/github-readme-stats)
+[![DominikMartynow's stats](https://github-readme-stats.vercel.app/api?username=DominikMartynow)](https://github.com/DominikMartynow/github-readme-stats)
 
 
 <!---
